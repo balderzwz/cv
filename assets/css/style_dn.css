@@ -1,0 +1,50 @@
+
+.tips{
+    position: fixed;
+    left: 0px;
+    top: -48px;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00796B;
+    
+    transition: top 0.4s;
+}
+
+#active{
+
+    top: 0px;
+}
+
+
+#dn_cv{
+    right: 40px;
+    bottom: 8px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 4px 8px 4px 8px;
+    position: fixed;
+    background-color: #00796B;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+#dn_cv:hover{
+    background-color: #009688;
+}
+
+#dn_cv:active{
+    background-color: #004D40;
+}
+
+#dn_cv img{
+    margin-right: 4px;
+    width: 28px;
+    height: 28px;
+}

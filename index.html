@@ -21,9 +21,14 @@
 <!-- Theme CSS -->  
 <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
 
+<!--生成pdf -->
+<link rel="stylesheet" href="./assets/css/style_dn.css">   
+<script src="./assets/js/pdf/jspdf.debug.js"></script>
+<script src="./assets/js/pdf/html2canvas.js"></script>
+<script src="./assets/js/pdf/renderPDF.js"></script>
 </head> 
 
-<body>
+<body id="CV_JASON">
 
 <header class="header">
 	<div class="top-bar container-fluid">
@@ -83,7 +88,7 @@
 	
 </header><!--//header-->
 
-<div class="wrapper container">
+<div class="wrapper container" >
 	<section id="experiences-section" class="experiences-section section">
 		<h2 class="section-title">工作经历</h2>
 		<div class="timeline">
@@ -743,6 +748,27 @@
 	</section><!--//section-->
 	
 </div><!--//wrapper-->
+<div class="tips">
+            正在生成PDF中...
+</div>
+<div id="dn_cv"><img src="./assets/images/pdf.png">导出PDF</div>
+<script>
+
+            document.body.onload = function(){
+
+                document.getElementById("dn_cv").onclick = function(e){
+
+                    var tips = document.getElementsByClassName("tips")[0];
+                    tips.id = "active";
+
+                    renderPDF(document.getElementById("CV_JASON"),"CV_JASON_张好","a4", function(){
+                        tips.id = "";
+                    });
+                }
+
+            }
+
+</script>
 
 <footer class="footer text-center">
 	<div class="container">
